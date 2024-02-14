@@ -4,13 +4,17 @@ import random
 
 pygame.init()
 
-class Player(pygame.sprite.Sprite):
-    def __init__(self):
-        super(Player, self).__init__()
-        self.surf = pygame.Surface((50, 50))
-        self.surf.fill(globals.WHITE)
+class Entity(pygame.sprite.Sprite):
+    def __init__(self, size: int, speed: int, color: pygame.color):
+        super(Entity, self).__init__()
+        self.surf = pygame.Surface((size, size))
+        self.surf.fill(color)
         self.rect = self.surf.get_rect()
-        self.speed = 5
+        self.speed = speed
+
+class Player(Entity):
+    def __init__(self):
+        super().__init__(50, 5, globals.WHITE)
 
     def update(self, pressed_keys):
         dx = 0
@@ -21,29 +25,16 @@ class Player(pygame.sprite.Sprite):
         if pressed_keys[pygame.K_RIGHT]:    dx += self.speed
 
         self.rect.move_ip(dx, dy)
+        self.rect.clamp_ip(pygame.Rect(0, 0, globals.SCREEN_WIDTH, globals.SCREEN_HEIGHT))
 
-        # force player in screen bounds
-        if self.rect.left < 0:
-            self.rect.left = 0
-        if self.rect.right > globals.SCREEN_WIDTH:
-            self.rect.right = globals.SCREEN_WIDTH
-        if self.rect.top <= 0:
-            self.rect.top = 0
-        if self.rect.bottom >= globals.SCREEN_HEIGHT:
-            self.rect.bottom = globals.SCREEN_HEIGHT
-
-
-class Enemy(pygame.sprite.Sprite):
+class Enemy(Entity):
     def __init__(self):
-        super(Enemy, self).__init__()
-        self.surf = pygame.Surface((25, 25))
-        self.surf.fill(globals.RED)
+        super().__init__(25, random.randint(5, 10), globals.RED)
         self.rect = self.surf.get_rect(center=(
             random.randint(globals.SCREEN_WIDTH + 20,
                            globals.SCREEN_WIDTH + 100),
             random.randint(0, globals.SCREEN_HEIGHT),
         ))
-        self.speed = random.randint(5, 10)
 
     def update(self):
         self.rect.move_ip(-self.speed, 0)
