@@ -4,6 +4,9 @@ import random
 
 pygame.init()
 
+enemies = pygame.sprite.Group()
+all_entities = pygame.sprite.Group()
+
 class Entity(pygame.sprite.Sprite):
     def __init__(self, size: int, speed: int, color: pygame.color):
         super(Entity, self).__init__()
@@ -11,6 +14,7 @@ class Entity(pygame.sprite.Sprite):
         self.surf.fill(color)
         self.rect = self.surf.get_rect()
         self.speed = speed
+        all_entities.add(self)
 
 class Player(Entity):
     def __init__(self):
@@ -35,6 +39,7 @@ class Enemy(Entity):
                            globals.SCREEN_WIDTH + 100),
             random.randint(0, globals.SCREEN_HEIGHT),
         ))
+        enemies.add(self)
 
     def update(self):
         self.rect.move_ip(-self.speed, 0)
@@ -50,10 +55,6 @@ pygame.time.set_timer(ADD_ENEMY, globals.ENEMY_SPAWN_RATE)
 
 player = Player()
 
-enemies = pygame.sprite.Group()
-all_entities = pygame.sprite.Group()
-all_entities.add(player)
-
 running = True
 
 while running:
@@ -67,8 +68,6 @@ while running:
 
         elif event.type == ADD_ENEMY:
             e = Enemy()
-            all_entities.add(e)
-            enemies.add(e)
 
     screen.fill(globals.BLACK)
 
