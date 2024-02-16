@@ -8,8 +8,8 @@ from game.entity_groups import ALL_ENTITIES, ENEMIES
 def main() -> None:
     pygame.init()
 
-    screen = pygame.display.set_mode(
-        (Display.SCREEN_WIDTH, Display.SCREEN_HEIGHT))
+    screen = pygame.display.set_mode((Display.SCREEN_WIDTH, Display.SCREEN_HEIGHT))
+    pygame.display.set_caption("I Don't Like Red Squares.")
     clock = pygame.time.Clock()
 
     ADD_ENEMY = pygame.USEREVENT + 1
