@@ -1,6 +1,6 @@
-from src.entity import Entity
+from game.entity import Entity
 import pygame
-from src.globals import Color, Display
+from game.globals import Color, Display
 
 class Player(Entity):
     def __init__(self):

@@ -1,4 +1,4 @@
-from src.entity_groups import ALL_ENTITIES
+from game.entity_groups import ALL_ENTITIES
 import pygame.sprite
 
 

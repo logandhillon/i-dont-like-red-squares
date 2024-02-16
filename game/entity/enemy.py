@@ -1,6 +1,6 @@
-from src.entity import Entity
-from src.entity_groups import ENEMIES
-from src.globals import Color, Display
+from game.entity import Entity
+from game.entity_groups import ENEMIES
+from game.globals import Color, Display
 import random
 
 

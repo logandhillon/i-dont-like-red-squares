@@ -1,8 +1,8 @@
 import pygame
-from src.globals import Display, Gameplay, Color
-from src.entity.player import Player
-from src.entity.enemy import Enemy
-from src.entity_groups import ALL_ENTITIES, ENEMIES
+from game.globals import Display, Gameplay, Color
+from game.entity.player import Player
+from game.entity.enemy import Enemy
+from game.entity_groups import ALL_ENTITIES, ENEMIES
 
 
 def main() -> None:
