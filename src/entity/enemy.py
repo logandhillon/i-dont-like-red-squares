@@ -1,4 +1,4 @@
-from src.entity.entity import Entity
+from src.entity import Entity
 from src.entity_groups import enemies
 from src.globals import Color, Display
 import random
