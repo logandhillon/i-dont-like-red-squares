@@ -1,12 +1,14 @@
-import pygame
+class Display:
+    SCREEN_WIDTH = 1280
+    SCREEN_HEIGHT = 720
 
-FPS = 60
+class Color:
+    from pygame import Color
 
-SCREEN_WIDTH = 1280
-SCREEN_HEIGHT = 720
+    BLACK = Color("black")
+    WHITE = Color("white")
+    RED = Color("red")
 
-BLACK = pygame.Color("black")
-WHITE = pygame.Color("white")
-RED = pygame.Color("red")
-
-ENEMY_SPAWN_RATE = 250
+class Gameplay:
+    FPS = 60
+    ENEMY_SPAWN_RATE = 250
