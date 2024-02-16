@@ -1,7 +1,7 @@
 import pygame
 from game.globals import Display, Gameplay, Color
-from game.entity.player import Player
-from game.entity.enemy import Enemy
+from game.entities.player import Player
+from game.entities.enemy import Enemy
 from game.entity_groups import ALL_ENTITIES, ENEMIES
 
 

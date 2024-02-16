@@ -1,4 +1,4 @@
-from game.entity import Entity
+from game.entities.entity import Entity
 from game.entity_groups import ENEMIES
 from game.globals import Color, Display
 import random

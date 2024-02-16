@@ -1,4 +1,4 @@
-from game.entity import Entity
+from game.entities.entity import Entity
 import pygame
 from game.globals import Color, Display
 
