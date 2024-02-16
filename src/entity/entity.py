@@ -1,6 +1,7 @@
 from src.entity_groups import all_entities
 import pygame.sprite
 
+
 class Entity(pygame.sprite.Sprite):
     def __init__(self, size: int, speed: int, color: pygame.color):
         super(Entity, self).__init__()

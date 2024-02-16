@@ -3,6 +3,7 @@ from src.entity_groups import enemies
 from src.globals import Color, Display
 import random
 
+
 class Enemy(Entity):
     def __init__(self):
         super().__init__(25, random.randint(5, 10), Color.RED)
