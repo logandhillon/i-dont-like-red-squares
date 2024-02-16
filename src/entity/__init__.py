@@ -1,4 +1,4 @@
-from src.entity_groups import all_entities
+from src.entity_groups import ALL_ENTITIES
 import pygame.sprite
 
 
@@ -9,4 +9,4 @@ class Entity(pygame.sprite.Sprite):
         self.surf.fill(color)
         self.rect = self.surf.get_rect()
         self.speed = speed
-        all_entities.add(self)
+        ALL_ENTITIES.add(self)

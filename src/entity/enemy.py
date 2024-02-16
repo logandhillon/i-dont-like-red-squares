@@ -1,5 +1,5 @@
 from src.entity import Entity
-from src.entity_groups import enemies
+from src.entity_groups import ENEMIES
 from src.globals import Color, Display
 import random
 
@@ -12,7 +12,7 @@ class Enemy(Entity):
                            Display.SCREEN_WIDTH + 100),
             random.randint(0, Display.SCREEN_HEIGHT),
         ))
-        enemies.add(self)
+        ENEMIES.add(self)
 
     def update(self):
         self.rect.move_ip(-self.speed, 0)

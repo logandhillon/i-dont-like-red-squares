@@ -1,4 +1,4 @@
 import pygame.sprite
 
-enemies = pygame.sprite.Group()
-all_entities = pygame.sprite.Group()
+ENEMIES = pygame.sprite.Group()
+ALL_ENTITIES = pygame.sprite.Group()
