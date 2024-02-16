@@ -2,7 +2,7 @@
 
 A simple game made to help me learn PyGame.
 
-> ⚠️ Experimental Project!
+> ⚠️ **Experimental Project!**<br>
 > This project was made to help me learn. Bugs may arise!
 
 ## Requirements
