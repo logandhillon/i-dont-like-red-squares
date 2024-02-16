@@ -29,7 +29,7 @@ def main() -> None:
                 running = False
 
             elif event.type == ADD_ENEMY:
-                e = Enemy()
+                Enemy()
 
         screen.fill(Color.BLACK)
 
