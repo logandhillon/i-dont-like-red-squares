@@ -2,7 +2,7 @@ import pygame
 from src.globals import Display, Gameplay, Color
 from src.entity.player import Player
 from src.entity.enemy import Enemy
-import src.entity_groups as entity_groups
+from src.entity_groups import all_entities, enemies
 
 pygame.init()
 
@@ -30,15 +30,15 @@ while running:
 
     screen.fill(Color.BLACK)
 
-    for entity in entity_groups.all_entities:
+    for entity in all_entities:
         screen.blit(entity.surf, entity.rect)
 
-    if pygame.sprite.spritecollideany(player, entity_groups.enemies):
+    if pygame.sprite.spritecollideany(player, enemies):
         player.kill()
         running = False
 
     player.update(pygame.key.get_pressed())
-    entity_groups.enemies.update()
+    enemies.update()
 
     pygame.display.flip()
 
